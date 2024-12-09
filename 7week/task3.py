@@ -3,12 +3,13 @@ binary-subarrays-with-sum/submissions/1474609370"""
 
 from typing import List
 
+
 class Solution:
-  def numSubarraysWithSum(self, nums: List[int], goal: int) -> int:
+    def numSubarraysWithSum(self, nums: List[int], goal: int) -> int:
         count = {0: 1}
         curr_sum = 0
         res = 0
-        
+
         for num in nums:
             curr_sum += num
             if curr_sum - goal in count:

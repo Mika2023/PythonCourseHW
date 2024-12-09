@@ -3,11 +3,15 @@ submissions/1474573798"""
 
 from typing import List
 
+
 class Solution:
     def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
-        if len(arr) == k: return arr
-        if x <= arr[0]: return arr[:k]
-        if x >= arr[-1]: return arr[-k:]
+        if len(arr) == k:
+            return arr
+        if x <= arr[0]:
+            return arr[:k]
+        if x >= arr[-1]:
+            return arr[-k:]
 
         firstClosest = self.binarySearch(arr, x)
         left = firstClosest - 1
@@ -39,6 +43,5 @@ class Solution:
         return left
 
 
-    
 a = Solution()
-a.findClosestElements([1,1,2,2,2,2,2,3,3],3,3)
+a.findClosestElements([1, 1, 2, 2, 2, 2, 2, 3, 3], 3, 3)
